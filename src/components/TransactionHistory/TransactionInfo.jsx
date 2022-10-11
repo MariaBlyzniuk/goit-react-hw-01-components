@@ -1,13 +1,24 @@
-import { TransactionHistory } from "./TransactionHistory";
+import { TransactionHistory } from "./TransactionHistory"
+import { ThHead} from "./TransactionHistory.styled"
+
 
 export const TransactionInfo = ({transactions}) => {
-    return (
-            <thead>
-      {transactions.map(transaction => (
-        <tr key={transaction.id}>
-          <TransactionHistory transaction={transaction} />
-        </tr>
-      ))}
+    return(
+      <table>
+  <thead>
+    <tr>
+      <ThHead>Type</ThHead>
+      <ThHead>Amount</ThHead>
+      <ThHead>Currency</ThHead>
+    </tr>
     </thead>
+          {transactions.map(transaction => (
+      
+                <tbody key={transaction.id}>
+                    <TransactionHistory transaction={transaction} />
+              </tbody>
+              
+            ))}
+  </table>
     )
-}
+    }

@@ -1,19 +1,19 @@
-export const TransactionHistory = ({items: {type, amount, currency}}) => {
-    return <table className="transaction-history">
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
-    </tr>
-  </thead>
+import PropTypes from "prop-types";
+import { TdBody } from "./TransactionHistory.styled";
 
-  <tbody>
-    <tr>
-                <td >{type}</td>
-                <td>{amount}</td>
-                <td>{currency}</td>
-    </tr>
-  </tbody>
-</table>
-}
+export const TransactionHistory = ({ transaction: { type, amount, currency } }) => {
+  return<tr>
+      <TdBody >{type}</TdBody>
+      <TdBody>{amount}</TdBody>
+      <TdBody>{currency}</TdBody>
+      </tr>   
+  }
+
+TransactionHistory.propTypes = {
+  transaction: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+  }),
+    
+    };
