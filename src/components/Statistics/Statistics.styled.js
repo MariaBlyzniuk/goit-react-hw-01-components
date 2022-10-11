@@ -24,6 +24,9 @@ display: flex;
 flex-direction: column;
 padding: 11px;
 border: 1px solid gray;
+background-color: ${(p) => `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`}
 `;
 
 export const StatsInfo = styled.span`
@@ -32,4 +35,5 @@ flex-direction: column;
 align-items: center;
 font-weight: 500;
 padding: 5px;
+
 `;
